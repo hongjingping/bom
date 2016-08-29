@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="阅读此协议，倒计时(10)秒" id="txt" disabled=true/>
+<script>
+    var txt = document.getElementById("txt");
+    var index = 10;
+    var timerId = setInterval(function () {
+        //一秒跳动一次
+        index --;
+        txt.value="阅读此协议，倒计时("+index+")秒";
+        //如果秒数为0的时候，就停止计时器
+        if(index==0){
+            txt.value="我同意";
+            txt.disabled=false;
+            //取消定时器
+            clearInterval(timerId);
+        }
+    },1000);
+</script>
+</body>
+</html>
